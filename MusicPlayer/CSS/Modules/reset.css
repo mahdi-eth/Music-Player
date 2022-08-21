@@ -1,0 +1,58 @@
+:root {
+    --white-color: #fafafa;
+    --black-color: #212121;
+    --primary-color: #fb8246 ;
+    --gray-1:#333;
+    --gray-2:#4F4F4F;
+    --font-size: 1.6rem;
+    --font-family: "Roboto", Arial, sans-serif;
+  }
+  
+  @font-face {
+    font-family: "Yekan";
+    src: url("./../fonts/Yekan.eot");
+    src: url("./../fonts/Yekan.eot?#iefix") format("embedded-opentype"),
+      /* IE6-IE8 */ url("./../fonts/Yekan.woff2") format("woff2"),
+      url("./../fonts/Yekan.woff") format("woff"),
+      url("./../fonts/Yekan.otf") format("opentype"),
+      url("./../fonts/Yekan.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    font-display: auto;
+  }
+  
+  /*****************************************************
+  CSS RESET ...
+  *****************************************************/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    /* 16px -> 10px  */
+  }
+  
+  body {
+    background-color: var(--white-color);
+    color: var(--black-color);
+    font-family:var(--font-family);
+    font-size: var(--font-size);
+  }
+  
+  a {
+    color: var(--black-color);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: var(--primary-color);
+  }
+  
+  ul {
+    list-style: none;
+  }

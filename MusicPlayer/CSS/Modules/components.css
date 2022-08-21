@@ -1,0 +1,128 @@
+/*****************************************************
+ COMPONENTS...
+*****************************************************/
+
+.btn {
+    border: none;
+    background: linear-gradient(258.57deg, #ff5500 2.36%, #fb8246 100%);
+    color: var(--white-color);
+    font-size: 1.8rem;
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    border: 0.2rem solid transparent;
+    transition: all 0.3s;
+  }
+  
+  .btn:hover {
+    background: transparent;
+    border: 0.2rem solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  .link-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .title {
+    border-bottom: 0.2rem solid #c4c4c4;
+    padding-bottom: 0.8rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 3.2rem;
+  }
+  
+  .title span::after {
+    content: " ";
+    display: block;
+    height: 0.8rem;
+    background: #ff5500;
+    border-radius: 0.45rem;
+    width: 65%;
+    transform: translateY(0.9rem);
+  }
+  
+  .music-card {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.6rem;
+    overflow: hidden;
+  }
+  
+  .music-cover {
+    height: 27.6rem;
+    object-fit: cover;
+  }
+  
+  .music-desc {
+    background-color: #ebebeb;
+    border-radius: 1.6rem;
+    margin-top: -1.5rem;
+  }
+  
+  .music-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.6rem;
+  }
+  
+  .music-details > * {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .singer-name {
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .music-name-text {
+    color: #4f4f4f;
+    font-weight: 400;
+  }
+  
+  .play-icon {
+    width: 7rem;
+    height: 7rem;
+    background-color: #ff5500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: -3.5rem;
+  }
+  .play-icon svg {
+    margin-left: 0.5rem;
+  }
+  
+  .form-control {
+    background-color: #fafafa;
+    padding: 2.4rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    font-family: var;
+    font-family: var(--font-family);
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    margin: 2.4rem 0;
+    border: 0.1rem solid transparent;
+  }
+  .form-control::placeholder {
+    color: #bdbdbd;
+  }
+  .form-control:focus {
+    border: 0.1rem solid var(--primary-color);
+  }

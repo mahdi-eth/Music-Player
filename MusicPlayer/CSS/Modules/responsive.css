@@ -1,0 +1,60 @@
+@media screen and (max-width: 1540px) {
+  .musics-container {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .music-card {
+    width: 20%;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+    .musics-container {
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .music-card {
+      min-width: 37.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .fs-42 {
+      font-size: 3.6rem;
+    }
+    .fs-20 {
+      font-size: 1.8rem;
+    }
+    .px-5 {
+      padding: 0 2.4rem;
+    }
+    .mobile-header {
+      display: flex;
+    }
+    .main-header-nav {
+      display: none;
+    }
+  
+    .hero-desc p {
+      width: 100%;
+    }
+    .music-card {
+      min-width: 31rem;
+    }
+  
+    .section-img,
+    .about-us-text {
+      width: 100%;
+      padding-top:5.6rem;
+    }
+  
+    .main-footer {
+      line-height: 200%;
+    }
+    .music-details-container {
+      justify-content: center;
+    }
+  }

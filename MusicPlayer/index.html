@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="css/modules/responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>music player</title>
+  </head>
+  <body>
+    <audio
+      id="audio"
+      src="https://dls.music-fa.com/tagdl/downloads/Mohsen%20Chavoshi%20-%2020%20Hezar%20Arezoo%20(320).mp3"
+    ></audio>
+    <header class="main-header container">
+      <nav class="main-header-nav d-flex align-items-center">
+        <h1>Logo Here !</h1>
+        <ul class="main-header-menu d-flex flex-grow-1">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="">Musics</a>
+          </li>
+          <li>
+            <a href="">Contact Us</a>
+          </li>
+          <li>
+            <a href="">About Us</a>
+          </li>
+        </ul>
+        <a href="#" class="btn">SignUp</a>
+      </nav>
+      <nav class="mobile-header d-flex">
+        <h1>Logo Here !</h1>
+        <button>--menu--</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-desc px-1">
+          <h1 class="fs-42 fw-500">
+            Persian Musics in POP - ROCK - HipHop and etc
+          </h1>
+          <p class="fs-20 fw-400">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed est
+            pellentesque nullam eget risus. Rhoncus, sociis duis sagittis nulla.
+          </p>
+          <a href="#" class="btn">Listen NOW !</a>
+        </div>
+      </section>
+
+      <section class="most-pop space-a">
+        <h2 class="title">
+          <span> Most Popular and good </span>
+        </h2>
+        <div class="container">
+          <div class="d-flex musics-container space-b"></div>
+        </div>
+      </section>
+
+      <section class="current-music-section space-a">
+        <h2 class="title">
+          <span>Current Music </span>
+        </h2>
+        <div class="d-flex flex-wrap music-details-container space-b container">
+          <div
+            style="background-image: url('./images/mohsen.jpg')"
+            class="current-music-cover"
+          >
+            <button class="link-btn cover-play-button">
+              <svg
+                id="play-icon"
+                width="183"
+                height="170"
+                viewBox="0 0 183 170"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M132.684 92.3876L60.0932 131.188C53.9327 134.478 46.0269 130.495 46.0269 123.863V46.262C46.0269 39.641 53.9213 35.6475 60.0932 38.9474L132.684 77.748C134.085 78.485 135.25 79.5503 136.06 80.8358C136.87 82.1213 137.297 83.5813 137.297 85.0678C137.297 86.5543 136.87 88.0144 136.06 89.2999C135.25 90.5854 134.085 91.6506 132.684 92.3876Z"
+                  fill="#F2F2F2"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="current-music-details">
+            <div class="music-name">
+              <h3 class="current-music-singer fs-24 text-grey-1 fw-400">
+                Mohsen Yrganeh
+              </h3>
+              <h5 class="current-music-title fs-16 text-grey-2 fw-400 py-2">
+                Behet Ghol Midam
+              </h5>
+            </div>
+            <div class="music-controls-wrapper">
+              <div class="music-time py-1">
+                <span class="current-time">00:00</span>
+                <span class="full-time">00:00</span>
+              </div>
+              <div class="music-progress">
+                <div class="music-progress-bar"></div>
+              </div>
+              <div class="music-controls py-3">
+                <button class="prev">
+                  <svg
+                    width="18"
+                    height="35"
+                    viewBox="0 0 18 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.595 0.427321C17.3606 0.180305 17.0497 0.0301173 16.719 0.00406475C16.3883 -0.0219878 16.0597 0.0778254 15.793 0.285355L15.6379 0.427321L0.405699 16.4714C0.171183 16.7183 0.0285933 17.0457 0.00385905 17.394C-0.0208753 17.7424 0.0738883 18.0885 0.270917 18.3694L0.405699 18.5328L15.6379 34.5768C15.8853 34.8354 16.2162 34.9862 16.5645 34.9991C16.9128 35.012 17.253 34.8861 17.517 34.6465C17.7811 34.4069 17.9497 34.0713 17.9891 33.7065C18.0285 33.3418 17.936 32.9748 17.7298 32.6788L17.595 32.5154L3.34136 17.5021L17.595 2.48874C17.8543 2.21526 18 1.84455 18 1.45803C18 1.07151 17.8543 0.700799 17.595 0.427321Z"
+                      fill="#4F4F4F"
+                    />
+                  </svg>
+                </button>
+                <button class="play">
+                  <svg
+                    width="34"
+                    height="39"
+                    viewBox="0 0 34 39"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.0585965 3.75484C0.0585965 1.42731 3.16006 0.0776807 5.38466 0.9872C7.93308 2.65922 29.6043 14.8642 31.5644 16.4936C33.5245 18.123 34.0866 20.71 31.4312 22.6341C28.776 24.558 7.67168 36.9793 5.38466 38.058C3.09716 39.1365 0.153909 37.6692 0.0585965 34.9394C-0.036716 32.2097 0.0585965 6.08213 0.0585965 3.75484ZM3.26038 5.77546C3.26038 6.36974 3.24227 32.666 3.20891 33.2069C3.15411 34.094 3.92376 34.9854 4.99602 34.4567C6.06829 33.9277 28.2337 20.7069 29.1139 20.3645C29.9943 20.0218 29.936 19.1492 29.1139 18.604C28.2921 18.0589 5.72254 5.14592 5.0625 4.57881C4.40246 4.01147 3.26038 4.86308 3.26038 5.7757V5.77546Z"
+                      fill="#4F4F4F"
+                    />
+                  </svg>
+                </button>
+                <button class="next">
+                  <svg
+                    width="18"
+                    height="35"
+                    viewBox="0 0 18 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.404974 0.427321C0.639435 0.180305 0.950275 0.0301173 1.28097 0.00406475C1.61166 -0.0219878 1.94025 0.0778254 2.20699 0.285355L2.36208 0.427321L17.5943 16.4714C17.8288 16.7183 17.9714 17.0457 17.9961 17.394C18.0209 17.7424 17.9261 18.0885 17.7291 18.3694L17.5943 18.5328L2.36208 34.5768C2.11468 34.8354 1.7838 34.9862 1.43548 34.9991C1.08717 35.012 0.747044 34.8861 0.482981 34.6465C0.218918 34.4069 0.0503426 34.0713 0.0109005 33.7065C-0.0285435 33.3418 0.0640469 32.9748 0.270191 32.6788L0.404974 32.5154L14.6586 17.5021L0.404974 2.48874C0.145655 2.21526 0 1.84455 0 1.45803C0 1.07151 0.145655 0.700799 0.404974 0.427321Z"
+                      fill="#4F4F4F"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-us space-a">
+        <h2 class="title">
+          <span>About Us</span>
+        </h2>
+        <div class="container flex-wrap px-5 space-b align-items-center d-flex">
+          <div class="about-us-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sed
+            duis viverra ullamcorper mollis. Amet diam blandit at donec ut sit
+            porttitor. Nam diam amet, sit tellus in sed gravida. Tincidunt odio
+            convallis enim leo integer viverra vitae.
+          </div>
+          <img class="section-img py-2" src="./images/about.svg" alt="" />
+        </div>
+      </section>
+
+      <section class="space-a">
+        <h2 class="title">
+          <span>Contact Us </span>
+        </h2>
+        <div
+          class="container flex-wrap contact-us-section px-5 space-b align-items-center d-flex"
+        >
+          <img class="section-img" src="./images/contact.svg" alt="" />
+          <form action="" class="contact-us-form flex-grow-1">
+            <input
+              placeholder="Enter Your Email"
+              class="form-control"
+              type="text"
+            />
+            <textarea
+              placeholder="type your message here ..."
+              class="form-control"
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+            <button class="btn">Submit Form</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer space-a">
+      <nav class="footer-nav bg-grey-2 py-3">
+        <ul class="d-flex flex-wrap px-3">
+          <li><a class="text-white px-3" href="">home</a></li>
+          <li><a class="text-white px-3" href="">musics</a></li>
+          <li><a class="text-white px-3" href="">blog</a></li>
+          <li><a class="text-white px-3" href="">about us</a></li>
+          <li><a class="text-white px-3" href="">contact us</a></li>
+        </ul>
+      </nav>
+      <div class="py-3">
+        <p class="copy px-5">
+          &copy copy right Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit.
+        </p>
+      </div>
+    </footer>
+    <script type="module" src="./JS/app.js"></script>
+  </body>
+</html>
