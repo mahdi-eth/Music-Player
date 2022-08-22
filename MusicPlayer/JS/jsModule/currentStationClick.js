@@ -1,9 +1,10 @@
-import {audio}  from "./handleCurrentStation.js";
+import { audio } from "./handleCurrentStation.js";
+import {timer} from "./handleTiming.js";
 
-let musicStationClicker = document.querySelector("#play-icon");
+export let musicStationClicker = document.querySelector("#play-icon");
 
-const pauseEl = `<svg id="play-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="180" height="180"><path fill="#f2f2f2" d="M8 5a2 2 0 0 0-2 2v10a2 2 0 1 0 4 0V7a2 2 0 0 0-2-2zm8 0a2 2 0 0 0-2 2v10a2 2 0 1 0 4 0V7a2 2 0 0 0-2-2z" class="color000 svgShape"></path></svg>`;
-const playEl = `<svg
+export const pauseEl = `<svg id="play-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="180" height="180"><path fill="#f2f2f2" d="M8 5a2 2 0 0 0-2 2v10a2 2 0 1 0 4 0V7a2 2 0 0 0-2-2zm8 0a2 2 0 0 0-2 2v10a2 2 0 1 0 4 0V7a2 2 0 0 0-2-2z" class="color000 svgShape"></path></svg>`;
+export const playEl = `<svg
 id="play-icon"
 width="183"
 height="170"
@@ -19,14 +20,35 @@ xmlns="http://www.w3.org/2000/svg"
 
 musicStationClicker.style.display = "inline";
 
-export default musicStationClicker.addEventListener("click", () => {
-      if (musicStationClicker.style.display == "inline") {
+export function playPauser() {
+  musicStationClicker.addEventListener("click", () => {
+    if (musicStationClicker.style.display == "inline") {
+      musicStationClicker.innerHTML = pauseEl;
+      musicStationClicker.style.display = "inline-block";
+      audio.play();
+      timer()
+    } else if (musicStationClicker.style.display == "inline-block") {
+      musicStationClicker.innerHTML = playEl;
+      musicStationClicker.style.display = "inline";
+      audio.pause();
+      timer()
+    }
+  });
+}
+
+export function playPauserIfElse() {
+  if (musicStationClicker.style.display == "inline") {
     musicStationClicker.innerHTML = pauseEl;
-    musicStationClicker.style.display = "inline-block"
-    audio.play()
-  } else if (musicStationClicker.style.display == "inline-block"){
+    musicStationClicker.style.display = "inline-block";
+    audio.play();
+    timer()
+  } else if (musicStationClicker.style.display == "inline-block") {
     musicStationClicker.innerHTML = playEl;
-    musicStationClicker.style.display = "inline"
+    musicStationClicker.style.display = "inline";
     audio.pause();
+    timer()
   }
-});
+}
+
+playPauser();
+
