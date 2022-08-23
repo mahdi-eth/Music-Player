@@ -5,6 +5,8 @@ import { playPauser } from "./currentStationClick.js";
 import { playPauserIfElse } from "./currentStationClick.js";
 import { pauseEl } from "./currentStationClick.js";
 import {timer} from "./handleTiming.js";
+// import progressBarRanger from "./handleProgressBar.js";
+
 
 const musicStationCover = document.querySelector(".current-music-cover");
 const musicStationSinger = document.querySelector(".current-music-singer");
