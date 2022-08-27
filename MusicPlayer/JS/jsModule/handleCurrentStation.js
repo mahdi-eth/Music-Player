@@ -43,6 +43,7 @@ export default [...containMusicCards.children].forEach((card) => {
         renderingStation(musics()[indexOfCurrentMusic]);
       }
     }
+
     let repeatState = false;
 
     let filtredStation = musics().filter(
@@ -54,10 +55,14 @@ export default [...containMusicCards.children].forEach((card) => {
       renderingStation(musics()[shuffledMusic]);
     });
 
-    repeat.addEventListener("click", (e) => {
+    repeat.addEventListener("click", () => {
       repeatState = !repeatState;
       console.log(repeatState);
+      if(repeatState)repeat.style.background = "linear-gradient(258.57deg, yellow 2.36%, #fb8246 100%";
+      if(!repeatState)repeat.style.background = "linear-gradient(258.57deg, #ff5500 2.36%, #fb8246 100%)";
     });
+ 
+
 
     let indexOfCurrentMusic = musics().findIndex(
       (item) => item.id === Number(card.dataset.id)
