@@ -64,6 +64,12 @@
   align-items: center;
 }
 
+.btns {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
 .current-music-details {
   display: flex;
   flex-direction: column;
@@ -156,4 +162,3 @@ input[type="range"]::-webkit-slider-thumb {
 .section-img {
   width: 40%;
 }
-

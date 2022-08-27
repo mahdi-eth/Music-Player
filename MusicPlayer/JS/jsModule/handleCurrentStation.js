@@ -8,6 +8,9 @@ import { timer } from "./handleTiming.js";
 import { nextBtn } from "./nextPrevBtns.js";
 import { prevBtn } from "./nextPrevBtns.js";
 
+const shuffle = document.getElementById("shuffle");
+const repeat = document.getElementById("repeat");
+const volume = document.getElementById("volume");
 const musicStationCover = document.querySelector(".current-music-cover");
 const musicStationSinger = document.querySelector(".current-music-singer");
 const musicStationTitle = document.querySelector(".current-music-title");
@@ -15,14 +18,6 @@ export const audio = document.querySelector("#audio");
 
 export default [...containMusicCards.children].forEach((card) => {
   card.addEventListener("click", () => {
-    let filtredStation = musics().filter(
-      (item) => item.id === Number(card.dataset.id)
-    )[0];
-
-    let indexOfCurrentMusic = musics().findIndex(
-      (item) => item.id === Number(card.dataset.id)
-    );
-
     function rendering() {
       musicStationCover.style.background = `url(${filtredStation.cover})`;
       musicStationSinger.innerHTML = filtredStation.artist;
@@ -34,29 +29,60 @@ export default [...containMusicCards.children].forEach((card) => {
       musicStationClicker.style.display = "inline";
       playPauser(playPauserIfElse(playPauser()));
     }
-
-    rendering();
-
-    function rendering2(e) {
-      filtredStation = musics()[indexOfCurrentMusic];
+    function renderingStation(e) {
+      filtredStation = e;
       rendering();
     }
 
-    function nexter(){
+    function nexter() {
       if (indexOfCurrentMusic !== musics().length - 1) {
         indexOfCurrentMusic++;
-        rendering2(musics()[indexOfCurrentMusic]);
+        renderingStation(musics()[indexOfCurrentMusic]);
       } else if (indexOfCurrentMusic == musics().length - 1) {
         indexOfCurrentMusic = 0;
-        rendering2(musics()[indexOfCurrentMusic]);
+        renderingStation(musics()[indexOfCurrentMusic]);
       }
     }
+    let repeatState = false;
+
+    let filtredStation = musics().filter(
+      (item) => item.id === Number(card.dataset.id)
+    )[0];
+
+    shuffle.addEventListener("click", () => {
+      const shuffledMusic = Math.floor(Math.random() * musics().length);
+      renderingStation(musics()[shuffledMusic]);
+    });
+
+    repeat.addEventListener("click", (e) => {
+      repeatState = !repeatState;
+      console.log(repeatState);
+    });
+
+    let indexOfCurrentMusic = musics().findIndex(
+      (item) => item.id === Number(card.dataset.id)
+    );
+
+    rendering();
 
     setInterval(() => {
-      if (audio.currentTime == audio.duration) {
-        nexter();
+      if (repeatState == true) {
+        if (audio.currentTime == audio.duration) {
+          setTimeout(() => {
+            audio.currentTime = 0;
+            audio.play();
+          }, 2000);
+        }
+      } else {
+        if (audio.currentTime == audio.duration) {
+          setTimeout(() => {
+            if (audio.currentTime == audio.duration) {
+              nexter();
+            }
+          }, 4000);
+        }
       }
-    },500);
+    }, 1);
 
     nextBtn.addEventListener("click", (event) => {
       nexter();
@@ -65,10 +91,10 @@ export default [...containMusicCards.children].forEach((card) => {
     prevBtn.addEventListener("click", (event) => {
       if (indexOfCurrentMusic !== 0) {
         indexOfCurrentMusic--;
-        rendering2(musics()[indexOfCurrentMusic]);
+        renderingStation(musics()[indexOfCurrentMusic]);
       } else if (indexOfCurrentMusic == 0) {
         indexOfCurrentMusic = 6;
-        rendering2(musics()[indexOfCurrentMusic]);
+        renderingStation(musics()[indexOfCurrentMusic]);
       }
     });
   });
