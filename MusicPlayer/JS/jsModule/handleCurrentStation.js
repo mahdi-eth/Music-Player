@@ -23,7 +23,7 @@ export default [...containMusicCards.children].forEach((card) => {
       (item) => item.id === Number(card.dataset.id)
     );
 
-    function rendering1(e) {
+    function rendering() {
       musicStationCover.style.background = `url(${filtredStation.cover})`;
       musicStationSinger.innerHTML = filtredStation.artist;
       musicStationTitle.innerHTML = filtredStation.name;
@@ -35,30 +35,31 @@ export default [...containMusicCards.children].forEach((card) => {
       playPauser(playPauserIfElse(playPauser()));
     }
 
-    rendering1();
+    rendering();
 
     function rendering2(e) {
       filtredStation = musics()[indexOfCurrentMusic];
-      musicStationCover.style.background = `url(${filtredStation.cover})`;
-      musicStationSinger.innerHTML = filtredStation.artist;
-      musicStationTitle.innerHTML = filtredStation.name;
-      audio.src = filtredStation.audio;
-      audio.play();
-      timer();
-      musicStationClicker.innerHTML = pauseEl;
-      musicStationClicker.style.display = "inline";
-      playPauser(playPauserIfElse(playPauser()));
-      // rendering1 = rendering2;
+      rendering();
     }
 
-    nextBtn.addEventListener("click", (event) => {
-      if (indexOfCurrentMusic !== 6) {
+    function nexter(){
+      if (indexOfCurrentMusic !== musics().length - 1) {
         indexOfCurrentMusic++;
         rendering2(musics()[indexOfCurrentMusic]);
-      } else if (indexOfCurrentMusic == 6) {
+      } else if (indexOfCurrentMusic == musics().length - 1) {
         indexOfCurrentMusic = 0;
         rendering2(musics()[indexOfCurrentMusic]);
       }
+    }
+
+    setInterval(() => {
+      if (audio.currentTime == audio.duration) {
+        nexter();
+      }
+    },500);
+
+    nextBtn.addEventListener("click", (event) => {
+      nexter();
     });
 
     prevBtn.addEventListener("click", (event) => {
