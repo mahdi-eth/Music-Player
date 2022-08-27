@@ -126,3 +126,8 @@
   .form-control:focus {
     border: 0.1rem solid var(--primary-color);
   }
+
+  #volume {
+    transform: rotate(270deg);
+    cursor: grabbing;
+  }
